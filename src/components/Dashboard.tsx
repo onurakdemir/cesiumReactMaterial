@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { Viewer } from 'resium';
-import SimpleCard from './SimpleCard';
+import Toolbar from './ToolBar';
 
 const drawerWidth = 240;
 
@@ -103,7 +103,7 @@ export default function Dashboard() {
             {/* Chart */}
             <Grid item xs={3}>
               <Paper className={fixedHeightPaper}>
-                <SimpleCard/>
+                <Toolbar/>
               </Paper>
             </Grid>
             <Grid item xs={9}>
