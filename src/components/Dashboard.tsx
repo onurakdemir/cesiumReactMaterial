@@ -101,14 +101,18 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container>
             {/* Chart */}
-            <Grid item xs={3}>
+            {/* <Grid item xs={3}>
               <Paper className={fixedHeightPaper}>
-                <Toolbar/>
+                <Toolbar />
               </Paper>
-            </Grid>
-            <Grid item xs={9}>
+            </Grid> */}
+            <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Viewer/>
+                <Viewer full>
+                  <div style={{ position: "absolute", top: 0, left: 0 }}>
+                    <Toolbar/>
+                  </div>
+                </Viewer>
               </Paper>
             </Grid>
           </Grid>
