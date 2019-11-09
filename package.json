@@ -7,6 +7,7 @@
     "@hot-loader/react-dom": "^16.9.0",
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.5.1",
+    "@types/cesium": "^1.59.2",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "cesium": "^1.60.0",

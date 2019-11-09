@@ -23,8 +23,10 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ToolBar() {
+export default function ToolBar({parentCallback} : { parentCallback: any}) {
   const classes = useStyles();
+  //const [count, setCount] = useState(0);
+
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
@@ -50,7 +52,7 @@ export default function ToolBar() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={parentCallback} >Learn More</Button>
       </CardActions>
     </Card>
   );
