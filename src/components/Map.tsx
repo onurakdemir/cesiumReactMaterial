@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Viewer, Entity } from 'resium';
 import Toolbar from './ToolBar';
@@ -6,8 +6,10 @@ import {Cartesian3} from "cesium";
 
 export default function Dashboard() {
 
-  function callback() {
-    console.log("onur");
+  const [description, setDescription] = useState("onurcuk");
+
+  function callback(newVal:string) {
+    setDescription(newVal);
   }
 
   return (
@@ -19,7 +21,7 @@ export default function Dashboard() {
           </div>
           <Entity
             name="test"
-            description="test!!"
+            description={description}
             position={Cartesian3.fromDegrees(-74.0707383, 40.7117244, 100)}
             point={{ pixelSize: 10 }}
           />

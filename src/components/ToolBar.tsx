@@ -25,9 +25,12 @@ const useStyles = makeStyles({
 
 export default function ToolBar({parentCallback} : { parentCallback: any}) {
   const classes = useStyles();
-  //const [count, setCount] = useState(0);
 
   const bull = <span className={classes.bullet}>•</span>;
+
+  function updateParent() {
+    parentCallback('Information  : ' + new Date().getSeconds()); 
+  }
 
   return (
     <Card className={classes.card}>
@@ -52,7 +55,7 @@ export default function ToolBar({parentCallback} : { parentCallback: any}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={parentCallback} >Learn More</Button>
+        <Button size="small" onClick={updateParent} >Learn More</Button>
       </CardActions>
     </Card>
   );
