@@ -10,15 +10,18 @@
     "@types/cesium": "^1.59.2",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/yup": "^0.26.24",
     "cesium": "^1.60.0",
     "craco-cesium": "^1.1.1",
     "craco-plugin-react-hot-reload": "^0.1.0",
+    "formik": "^2.0.4",
     "react": "latest",
     "react-dom": "latest",
     "react-hot-loader": "^4.12.11",
     "react-scripts": "latest",
     "resium": "^1.7.0",
-    "typescript": "latest"
+    "typescript": "latest",
+    "yup": "^0.27.0"
   },
   "scripts": {
     "start": "craco start",

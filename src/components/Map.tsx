@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Viewer, Entity } from 'resium';
-import Toolbar from './ToolBar';
 import {Cartesian3} from "cesium";
+import ControlPanel from "./ControlPanel";
 
 export default function Dashboard() {
 
@@ -17,7 +17,7 @@ export default function Dashboard() {
       <Grid item xs={12}>
         <Viewer full>
           <div style={{ position: "absolute", top: 0, left: 0 }}>
-            <Toolbar parentCallback={callback}/>
+          <ControlPanel />
           </div>
           <Entity
             name="test"
