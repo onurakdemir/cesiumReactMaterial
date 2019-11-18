@@ -5,9 +5,13 @@ import { CameraProps } from '../interfaces/Interfaces';
 import { Button } from '@material-ui/core';
 
 const CameraControl: React.SFC<CameraProps> = (props) => {
+  function callback() {
+    props.update();
+  }
+
   return (
     <React.Fragment>
-      <Button variant="outlined" color="primary" onClick={props.update}>
+      <Button variant="outlined" color="primary" onClick={callback}>
         Contact us!
       </Button>
       <h1>Hello, {props.yaw}</h1>

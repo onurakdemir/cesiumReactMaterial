@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import { Viewer, Entity } from 'resium';
 import { Cartesian3 } from "cesium";
 import CameraControl from "./CameraControl";
+import ContentForm from "./ContentForm";
 //import { CameraProps } from '../interfaces/Interfaces';
 
 export default function Dashboard() {
@@ -26,6 +27,7 @@ export default function Dashboard() {
         <Viewer full>
           <div style={{ position: "absolute", top: 0, left: 0 }}>
             <CameraControl yaw={245} update={callback} />
+            {/* <ContentForm /> */}
           </div>
           <Entity
             name="test"
