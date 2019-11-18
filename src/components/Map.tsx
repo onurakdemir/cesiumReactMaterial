@@ -1,19 +1,23 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Viewer, Entity } from 'resium';
-import {Cartesian3} from "cesium";
+import { Cartesian3 } from "cesium";
 import CameraControl from "./CameraControl";
-import {CameraProps} from '../interfaces/Interfaces';
+//import { CameraProps } from '../interfaces/Interfaces';
 
 export default function Dashboard() {
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     yaw: 0,
     pitch: 90,
     roll: 0
   });
 
-  function callback(newVal:number) {
-    state.yaw = newVal;
+  function callback() {
+    setState({
+      yaw: 30,
+      pitch: 60,
+      roll:45
+    });
   }
 
   return (
@@ -21,11 +25,11 @@ export default function Dashboard() {
       <Grid item xs={12}>
         <Viewer full>
           <div style={{ position: "absolute", top: 0, left: 0 }}>
-          <CameraControl yaw = {245} />
+            <CameraControl yaw={245} update={callback} />
           </div>
           <Entity
             name="test"
-            description="{description}"
+            description={state.yaw}
             position={Cartesian3.fromDegrees(-74.0707383, 40.7117244, 100)}
             point={{ pixelSize: 10 }}
           />
