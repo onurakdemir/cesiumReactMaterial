@@ -15,12 +15,13 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "isolatedModules": true
   },
   "include": [
-    // "src", "public/archive", "_archive/theme.tsx"
-    "src", "public/archive"
+    "src",
+    "public/archive",
+    "archive/ControlPanel.tsx"
   ]
 }
