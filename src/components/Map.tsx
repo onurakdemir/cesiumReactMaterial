@@ -5,6 +5,7 @@ import { Cartesian3 } from "cesium";
 import CameraControl from "./CameraControl";
 import ContentForm from "./ContentForm";
 //import { CameraProps } from '../interfaces/Interfaces';
+import InputForm from "./InputForm/inputForm";
 
 export default function Dashboard() {
   const [state, setState] = useState({
@@ -27,6 +28,7 @@ export default function Dashboard() {
         <Viewer full>
           <div style={{ position: "absolute", top: 0, left: 0 }}>
             <CameraControl yaw={245} update={callback} />
+            <InputForm />
             {/* <ContentForm /> */}
           </div>
           <Entity
