@@ -6,8 +6,9 @@ export default class Basic extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isGoing: true,
-      yaw: 2
+      yaw: 30,
+      pitch: 30,
+      roll:30
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -16,17 +17,12 @@ export default class Basic extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('The link was clicked.');
-    this.props.update(this.state.yaw);
+    this.props.update(this.state.yaw, this.state.pitch, this.state.roll);
   }
 
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
+  handleInputChange(e) {
     this.setState({
-      [name]: value
+      [e.target.name]: e.target.type === 'number' ? parseInt(e.target.value) : e.target.value
     });
   }
 
@@ -34,21 +30,32 @@ export default class Basic extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Is going:
-          <input
-            name="isGoing"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} />
-        </label>
-        <br />
-        <label>
-          Number of guests:
+          Yaw  :
           <input
             name="yaw"
             type="number"
             value={this.state.yaw}
-            onChange={this.handleInputChange} />
+            onChange={this.handleInputChange}
+            />
+        </label>
+        <label>
+          Pitch:
+          <input
+            name="pitch"
+            type="number"
+            value={this.state.pitch}
+            onChange={this.handleInputChange} 
+            />
+        </label>
+        <br />
+        <label>
+          Roll :
+          <input
+            name="roll"
+            type="number"
+            value={this.state.roll}
+            onChange={this.handleInputChange} 
+            />
         </label>
         <input type="submit" value="Submit" />
       </form>
