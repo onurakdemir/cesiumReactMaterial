@@ -2,6 +2,7 @@ import React from "react";
 import '../../style/skeleton.css';
 import '../../style/main.css';
 import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 
 export default class Basic extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ export default class Basic extends React.Component {
     this.state = {
       yaw: 30,
       pitch: 30,
-      roll:30
+      roll: 30
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -29,37 +30,41 @@ export default class Basic extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Yaw  :
+      <Typography color="textSecondary">
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            <h4>Yaw  :</h4>
           <TextField
-            name="yaw"
-            type="number"
-            value={this.state.yaw}
-            onChange={this.handleInputChange}
+              name="yaw"
+              type="number"
+              value={this.state.yaw}
+              onChange={this.handleInputChange}
+              fullWidth
             />
-        </label>
-        <label>
-          Pitch:
+          </label>
+          <label>
+            <h4>Pitch:</h4>
           <TextField
-            name="pitch"
-            type="number"
-            value={this.state.pitch}
-            onChange={this.handleInputChange} 
+              name="pitch"
+              type="number"
+              value={this.state.pitch}
+              onChange={this.handleInputChange}
+              fullWidth
             />
-        </label>
-        <br />
-        <label>
-          Roll :
+          </label>
+          <label>
+            <h4>Roll :</h4>
           <TextField
-            name="roll"
-            type="number"
-            value={this.state.roll}
-            onChange={this.handleInputChange} 
+              name="roll"
+              type="number"
+              value={this.state.roll}
+              onChange={this.handleInputChange}
+              fullWidth
             />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      </Typography>
     );
   }
 }
