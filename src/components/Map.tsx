@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Viewer, Entity } from 'resium';
 import { Cartesian3 } from "cesium";
-import CameraControl from "./CameraControl";
-import ContentForm from "./ContentForm";
-//import { CameraProps } from '../interfaces/Interfaces';
-import InputForm from "./InputForm/inputForm";
+// import CameraControl from "./CameraControl";
+// import ContentForm from "./ContentForm";
+// import { CameraProps } from '../interfaces/Interfaces';
+import Basic from './InputForm/basic';
 
 export default function Dashboard() {
   const [state, setState] = useState({
@@ -14,9 +14,9 @@ export default function Dashboard() {
     roll: 0
   });
 
-  function callback() {
+  function callback(yawx: number) {
     setState({
-      yaw: 30,
+      yaw: yawx,
       pitch: 60,
       roll:45
     });
@@ -27,8 +27,9 @@ export default function Dashboard() {
       <Grid item xs={12}>
         <Viewer full>
           <div style={{ position: "absolute", top: 0, left: 0 }}>
-            <CameraControl yaw={245} update={callback} />
-            <InputForm />
+            <Basic update={callback}/>
+            {/* <CameraControl yaw={245} update={callback} /> */}
+            {/* <InputForm /> */}
             {/* <ContentForm /> */}
           </div>
           <Entity
