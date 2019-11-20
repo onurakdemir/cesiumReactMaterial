@@ -1,6 +1,7 @@
 import React from "react";
 import '../../style/skeleton.css';
 import '../../style/main.css';
+import TextField from '@material-ui/core/TextField';
 
 export default class Basic extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ export default class Basic extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Yaw  :
-          <input
+          <TextField
             name="yaw"
             type="number"
             value={this.state.yaw}
@@ -40,7 +41,7 @@ export default class Basic extends React.Component {
         </label>
         <label>
           Pitch:
-          <input
+          <TextField
             name="pitch"
             type="number"
             value={this.state.pitch}
@@ -50,7 +51,7 @@ export default class Basic extends React.Component {
         <br />
         <label>
           Roll :
-          <input
+          <TextField
             name="roll"
             type="number"
             value={this.state.roll}
