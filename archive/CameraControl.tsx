@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/skeleton.css';
 import '../style/main.css';
-import { CameraProps } from '../interfaces/Interfaces';
+import { CameraProps } from '../src/interfaces/Interfaces';
 import { Button } from '@material-ui/core';
 
 const CameraControl: React.SFC<CameraProps> = (props) => {
